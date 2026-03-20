@@ -1,6 +1,6 @@
 ---
-title: "OpenClaw + Mooncake: A Stability Upgrade for Real Multi-Session Inference"
-summary: "By integrating Mooncake into OpenClaw's real inference path, we did not just improve fast-path latency. We sharply reduced tail TTFT in multi-session, long-context workloads, turning a system that was usually fast but occasionally slow into one that feels consistently smooth."
+title: "OpenClaw + Mooncake: A Stability Upgrade for Real-World Multi-Session Inference"
+summary: "By integrating Mooncake into OpenClaw's real inference path, we not only improved fast-path latency, but also sharply reduced TTFT tail latency in multi-session, long-context workloads, turning a system that was usually fast but occasionally slow into one that feels consistently smooth."
 date: 2026-03-19
 dateshown: March 19, 2026
 authors:
@@ -15,7 +15,7 @@ tags:
 draft: false
 showathome: true
 commentable: false
-home_weight: 95
+home_weight: 110
 image:
   alt_text: "OpenClaw and Mooncake tail-latency stability upgrade"
 ---
@@ -32,7 +32,7 @@ If you interact with AI systems continuously, you already know how big that diff
 
 Sometimes a system is not broadly slow. It is just *occasionally* slow. Most turns feel fine, and then one reply suddenly pauses for three or five seconds. In that moment, the experience shifts from "this feels smooth" to "why did it hang again?"
 
-That kind of problem does not always stand out in single-turn benchmarks. It can even be easy to miss in lab-style testing. But in real multi-session workloads, it becomes one of the most important parts of perceived performance.
+That kind of problem does not always stand out in single-turn benchmarks. It can even be easy to miss in lab-style testing. But in real-world multi-session workloads, it becomes one of the most important parts of perceived performance.
 
 We recently integrated Mooncake into OpenClaw's inference path and ran a focused validation around exactly this question.
 
