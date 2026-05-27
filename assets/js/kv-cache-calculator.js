@@ -154,9 +154,11 @@
   }
 
   function fieldList(model, names) {
+    const fields = model && model.fields;
+    if (!fields || typeof fields !== "object") return "";
     return names
-      .filter((name) => Object.prototype.hasOwnProperty.call(model.fields, name))
-      .map((name) => `${name}=${model.fields[name]}`)
+      .filter((name) => Object.prototype.hasOwnProperty.call(fields, name))
+      .map((name) => `${name}=${fields[name]}`)
       .join(", ");
   }
 
