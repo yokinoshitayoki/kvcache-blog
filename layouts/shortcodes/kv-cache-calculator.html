@@ -44,6 +44,12 @@
         <input data-kv-input="includeLinearAttentionState" type="checkbox">
         <span data-kv-inline-help="Adds Qwen3.5/3.6 linear-attention recurrent and convolution state. This state is sequence-level runtime cache, not ordinary per-token KV.">Include linear-attention state</span>
       </label>
+
+      <div class="kv-cta-note">
+        <p>Want to analyze KV cache hit rates of your traces? Try our <a href="https://kvcache.ai/tools/kv-cache-hit-rate-simulator/">KV Cache Hit Rate Simulator</a>.</p>
+        <p>Want to scale KV cache storage across your inference cluster? Try <a href="https://github.com/kvcache-ai/Mooncake">Mooncake</a>.</p>
+        <p>Found an issue or have feedback? <a href="https://github.com/kvcache-ai/kvcache-blog/issues">Open an issue</a> and let us know.</p>
+      </div>
     </form>
 
     <div class="kv-results">
@@ -394,6 +400,35 @@
     overflow-wrap: anywhere;
   }
 
+  .kv-cta-note {
+    margin-top: 0.1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--kv-line);
+    color: var(--kv-muted);
+    font-size: 0.76rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .kv-cta-note p {
+    margin: 0 0 0.4rem;
+  }
+
+  .kv-cta-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .kv-cta-note a {
+    color: #0369a1;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .kv-cta-note a:hover {
+    color: #0c4a6e;
+    text-decoration: underline;
+  }
+
   @media (max-width: 860px) {
     .kv-total-band {
       align-items: start;
@@ -469,6 +504,10 @@
 
   :is(.dark .kv-formula-expression) {
     color: #e2e8f0;
+  }
+
+  :is(.dark .kv-cta-note a) {
+    color: #38bdf8;
   }
 
   :is(.dark .kv-help::after) {
