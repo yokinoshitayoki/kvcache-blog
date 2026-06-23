@@ -558,7 +558,7 @@
             description: "Combined main KV cache and MSA index-key side cache.",
           },
         ],
-        note: "MiniMax M3 MSA still stores full main K/V cache; block size 128 is the sparse selection granularity, not a sliding-window retention cap. Current vLLM support stores the indexer side cache in BF16.",
+        note: "MiniMax Sparse Attention (MSA) uses a lightweight indexer to pick the most relevant KV blocks for each query, so long-context attention can read a sparse subset of the cached tokens while keeping a separate indexer cache for block selection.",
         byteGroups: [
           { role: "kv", label: "KV cache", elements: kvElements },
           { role: "indexer", label: "Indexer cache", elements: indexerElements },

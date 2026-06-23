@@ -844,7 +844,8 @@ test("MiniMax M3 MSA formula counts main KV plus key-only indexer cache", () => 
   assert.equal(plan.components.find(([label]) => label === "Full-attention layers")[1], 3);
   assert.equal(plan.components.find(([label]) => label === "Sparse-attention layers")[1], 57);
   assert.equal(plan.components.find(([label]) => label === "MTP modules not included")[1], 7);
-  assert.match(plan.note, /not a sliding-window retention cap/);
+  assert.match(plan.note, /lightweight indexer/);
+  assert.match(plan.note, /relevant KV blocks/);
 });
 
 test("MiniMax M3 fixes indexer precision to BF16 while KV precision can use FP8", () => {
